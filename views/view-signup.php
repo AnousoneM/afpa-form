@@ -11,12 +11,13 @@
             <div class="my-1">
                 <label for="">Nom</label>
                 <input type="text" name="lastname" placeholder="ex. DOE">
-                <!-- <span class="text-danger ms-2">Mauvais format</span> -->
+                <span class="text-danger ms-2">Champ obligatoire</span>
             </div>
 
             <div class="my-1">
                 <label for="">Prénom</label>
                 <input type="text" name="firstname" placeholder="ex. John">
+                <!-- <span class="text-danger ms-2">Mauvais format</span> -->
             </div>
             <div class="my-1">
                 <label for="">Date de naissance</label>
@@ -25,6 +26,7 @@
             <div class="my-1">
                 <label for="">Courriel</label>
                 <input type="email" name="email" placeholder="ex. mon-mail@mail.fr">
+                <span class="text-danger ms-2">Champ obligatoire</span>
             </div>
             <div class="my-1">
                 <label for="">Mot de passe</label>
