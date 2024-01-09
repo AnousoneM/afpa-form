@@ -1,4 +1,10 @@
-/* test css */
+
+.input-warning {
+    color: red;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
 body {
-    background-color: aquamarine;
+    background-color: #ffbe98;
 }
