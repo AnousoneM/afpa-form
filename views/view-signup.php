@@ -5,9 +5,9 @@
 
 <div class="container my-5 col-4 p-4 shadow rounded">
 
-    <?php if ($showform) { ?>
+  
 
-        <form action="" method="POST">
+        <form action="" method="GET">
             <div class="my-1">
                 <label for="">Nom</label>
                 <input type="text" name="lastname" placeholder="ex. DOE">
@@ -41,8 +41,8 @@
 
         </form>
 
-    <?php } else { ?>
 
+<!-- 
         <h2 class="text-center">Récapitulatifs des infos</h2>
         <ul>
             <li><b>Nom : </b><?= $_POST['lastname'] ?? '' ?></li>
@@ -53,9 +53,9 @@
         </ul>
 
         <p class="fs-4 text-center">Un mail de confirmation vous a été envoyé, vous pouvez maintenant vous connecter</p>
-        <a class="col-4 btn btn-secondary d-block mx-auto" href="../index.php">Connexion</a>
+        <a class="col-4 btn btn-secondary d-block mx-auto" href="../index.php">Connexion</a> -->
 
-    <?php } ?>
+
 </div>
 
 <!-- Intégration du footer -->

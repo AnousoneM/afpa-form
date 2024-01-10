@@ -1,13 +1,8 @@
 <?php
 
-// ici la logique de la page signup
+var_dump($_POST);
+var_dump($_GET);
 
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $showform = false;
-} else {
-    $showform = true;
-}
 
 ?>
 
