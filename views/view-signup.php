@@ -3,39 +3,54 @@
 
 <h1 class="text-center mt-5">INSCRIPTION</h1>
 
-<div class="container my-5 col-4 p-4 shadow rounded">
+<div class="container my-5 col-4 px-5 py-4 shadow rounded bg-white">
 
   
 
+<<<<<<< HEAD
         <form action="" method="GET">
             <div class="my-1">
+=======
+        <form action="" method="POST">
+            <div class="my-3">
+>>>>>>> b9b1a7e649138e4516e2d26470b2a1a8b0fbd8ac
                 <label for="">Nom</label>
                 <input type="text" name="lastname" placeholder="ex. DOE">
-                <span class="text-danger ms-2">Champ obligatoire</span>
+                <!-- Message d'erreur si ko -->
+                <span class="input-warning ms-2">Champ obligatoire</span>
             </div>
 
-            <div class="my-1">
+            <div class="my-3">
                 <label for="">Prénom</label>
                 <input type="text" name="firstname" placeholder="ex. John">
-                <!-- <span class="text-danger ms-2">Mauvais format</span> -->
+                <span class="input-warning ms-2">Champ obligatoire</span>
             </div>
-            <div class="my-1">
+            <div class="my-3">
                 <label for="">Date de naissance</label>
                 <input type="date" name="birthdate">
+                <span class="input-warning ms-2">Champ obligatoire</span>
             </div>
-            <div class="my-1">
+            <div class="my-3">
                 <label for="">Courriel</label>
                 <input type="email" name="email" placeholder="ex. mon-mail@mail.fr">
-                <span class="text-danger ms-2">Champ obligatoire</span>
+                <span class="input-warning ms-2">Champ obligatoire</span>
             </div>
-            <div class="my-1">
+            <div class="my-3">
                 <label for="">Mot de passe</label>
                 <input type="password" name="password">
+                <span class="input-warning ms-2">Champ obligatoire</span>
             </div>
-            <div class="my-1">
+            <div class="my-3">
                 <label for="">Confirmation du mot de passe</label>
                 <input type="password">
+                <span class="input-warning ms-2">Champ obligatoire</span>
             </div>
+            <div class="my-4">
+                <input name="cgu" id="cgu" type="checkbox">
+                <label for="cgu">J'accepte les CGU</label>
+                <span class="input-warning ms-2">Champ obligatoire</span>
+            </div>
+
 
             <button class="mt-3 btn btn-outline-secondary">S'enregistrer</button>
 
