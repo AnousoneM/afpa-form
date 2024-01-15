@@ -3,73 +3,68 @@
 
 <h1 class="text-center mt-5">INSCRIPTION</h1>
 
-<div class="container my-5 col-4 px-5 py-4 shadow rounded bg-white">
+<div class="container my-5 col-8 px-5 py-4 shadow rounded bg-white">
 
-  
+    <form action="" method="POST">
+        <div class="my-3">
+            <label for="lastname">Nom</label>
+            <!-- Je fais une value pour conserver les données du formulaire si erreur -->
+            <input type="text" name="lastname" id="lastname" placeholder="ex. DOE" value="<?= $_POST['lastname'] ?? '' ?>">
+            <!-- Message d'erreur si non OK -->
+            <span class="input-warning ms-2"><?= $errors['lastname'] ?? '' ?></span>
+        </div>
 
-<<<<<<< HEAD
-        <form action="" method="GET">
-            <div class="my-1">
-=======
-        <form action="" method="POST">
-            <div class="my-3">
->>>>>>> b9b1a7e649138e4516e2d26470b2a1a8b0fbd8ac
-                <label for="">Nom</label>
-                <input type="text" name="lastname" placeholder="ex. DOE">
-                <!-- Message d'erreur si ko -->
-                <span class="input-warning ms-2">Champ obligatoire</span>
-            </div>
+        <div class="my-3">
+            <label for="firstname">Prénom</label>
+            <input type="text" name="firstname" id="firstname" placeholder="ex. John">
+            <span class="input-warning ms-2"><?= $errors['firstname'] ?? '' ?></span>
+        </div>
 
-            <div class="my-3">
-                <label for="">Prénom</label>
-                <input type="text" name="firstname" placeholder="ex. John">
-                <span class="input-warning ms-2">Champ obligatoire</span>
-            </div>
-            <div class="my-3">
-                <label for="">Date de naissance</label>
-                <input type="date" name="birthdate">
-                <span class="input-warning ms-2">Champ obligatoire</span>
-            </div>
-            <div class="my-3">
-                <label for="">Courriel</label>
-                <input type="email" name="email" placeholder="ex. mon-mail@mail.fr">
-                <span class="input-warning ms-2">Champ obligatoire</span>
-            </div>
-            <div class="my-3">
-                <label for="">Mot de passe</label>
-                <input type="password" name="password">
-                <span class="input-warning ms-2">Champ obligatoire</span>
-            </div>
-            <div class="my-3">
-                <label for="">Confirmation du mot de passe</label>
-                <input type="password">
-                <span class="input-warning ms-2">Champ obligatoire</span>
-            </div>
-            <div class="my-4">
-                <input name="cgu" id="cgu" type="checkbox">
-                <label for="cgu">J'accepte les CGU</label>
-                <span class="input-warning ms-2">Champ obligatoire</span>
-            </div>
+        <div class="my-3">
+            <label for="pseudo">Pseudo</label>
+            <input type="text" name="pseudo" id="pseudo" placeholder="ex. John">
+            <span class="input-warning ms-2"></span>
+        </div>
 
+        <div class="my-3">
+            <label for="birthdate">Date de naissance</label>
+            <input type="date" name="birthdate" id="birthdate">
+            <span class="input-warning ms-2"></span>
+        </div>
 
-            <button class="mt-3 btn btn-outline-secondary">S'enregistrer</button>
+        <div class="my-3">
+            <label for="">Courriel</label>
+            <input type="email" name="email" id="email" placeholder="ex. mon-mail@mail.fr">
+            <span class="input-warning ms-2"></span>
+        </div>
 
-        </form>
+        <select name="enterprise" id="enterprise">
+            <option value="" selected disabled>-- Veuillez sélectionner votre entreprise --</option>
+            <option value="1">Bad Company</option>
+            <option value="2">Afpa</option>
+        </select>
 
+        <div class="my-3">
+            <label for="password">Mot de passe</label>
+            <input type="password" name="password" id="password">
+            <span class="input-warning ms-2"></span>
+        </div>
 
-<!-- 
-        <h2 class="text-center">Récapitulatifs des infos</h2>
-        <ul>
-            <li><b>Nom : </b><?= $_POST['lastname'] ?? '' ?></li>
-            <li><b>Prénom : </b><?= $_POST['firstname'] ?? '' ?></li>
-            <li><b>Date de naissance : </b><?= $_POST['birthdate'] ?? '' ?></li>
-            <li><b>Courriel : </b><?= $_POST['email'] ?? '' ?></li>
-            <li><b>Mot de passe : </b><?= $_POST['password'] ?? '' ?></li>
-        </ul>
+        <div class="my-3">
+            <label for="confirmPassword">Confirmation du mot de passe</label>
+            <input type="password" name="confirmPassword" id="confirmPassword">
+            <span class="input-warning ms-2"></span>
+        </div>
 
-        <p class="fs-4 text-center">Un mail de confirmation vous a été envoyé, vous pouvez maintenant vous connecter</p>
-        <a class="col-4 btn btn-secondary d-block mx-auto" href="../index.php">Connexion</a> -->
+        <div class="my-4">
+            <input name="cgu" id="cgu" type="checkbox">
+            <label for="cgu">J'accepte les CGU</label>
+            <span class="input-warning ms-2"></span>
+        </div>
 
+        <button class="mt-3 btn btn-outline-secondary">S'enregistrer</button>
+
+    </form>
 
 </div>
 

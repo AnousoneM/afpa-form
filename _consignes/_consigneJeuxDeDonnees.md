@@ -26,14 +26,15 @@ Creations de **21 trajets** à répartir sur les utilisateurs préalablement cr�
 #### Affichages de tous les modes de transports : 1 requête
 - détails des transports
 
-#### Affichages des trajets pris en compte pour **un challenge / évènement** : 2 requêtes
+#### Affichages des trajets pris en compte pour **un challenge / évènement** : 3 requêtes
 - détails des trajets
-- uniquement la somme des trajets
+- uniquement la somme des distances des trajets du challenge
+- détails du challenge avec les transports prise en compte
 
 #### Affichage d'un utilisateur : 3 requêtes
 - détail d'un utilisateur
 - affichage de tous les trajets de l'utilisateur
-- total des trajets effectuer par l'utilisateur
+- distance total des trajets effectués par l'utilisateur
 
 
 #### Affichage d'une entreprise : 5 requêtes
@@ -46,7 +47,7 @@ Creations de **21 trajets** à répartir sur les utilisateurs préalablement cr�
 #### Affichage des utilisateurs : 3 requêtes
 - détails de tous les utilisateurs
 - total de tous les utilisateurs
-- total des utilisateurs actifs
+- total des utilisateurs actifs (Qui ont postés des trajets dans l'application)
 
 #### Affichages des entreprises : 2 requêtes
 - détails de toutes les entreprises
