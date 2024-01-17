@@ -18,7 +18,7 @@
                 <span class="text-danger"><?= $errors['password'] ?? '' ?></span>
             </div>
             <p class="text-danger"></p>
-            <button class="d-block my-3 btn btn-success col-3 mx-auto" href="../controllers/controller-home.php">Se connecter</button>
+            <button class="d-block my-3 btn btn-success col-3 mx-auto">Se connecter</button>
             <a href="../controllers/controller-signup.php">S'inscrire</a>
         </div>
     </div>

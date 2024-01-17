@@ -22,7 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(empty($errors)){
         // ici commence les tests
         if (!Utilisateur::checkMailExists($_POST['email'])) {
-            $errors['email'] = 'Mauvais identifiant';
+            $errors['email'] = 'Utilisateur Inconnu';
+        } else {
+            $errors['email'] = 'Utilisateur Connu';
         }
     }
 

@@ -37,13 +37,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors['pseudo'] = 'Veuillez saisir un pseudo';
     } elseif (!preg_match($regexPseudo, $_POST['pseudo'])) {
         $errors['pseudo'] = 'Caractères non valides';
+    } elseif (Utilisateur::checkPseudoExists($_POST['pseudo'])) {
+        $errors['pseudo'] = 'Pseudo déjà utilisé';
     }
 
     // Vérification du mail
     if (empty($_POST['email'])) {
         $errors['email'] = 'Veuillez saisir un courriel';
     } elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-        $errors['email'] = 'mail non valide';
+        $errors['email'] = 'Mail non valide';
+    } elseif (Utilisateur::checkMailExists($_POST['email'])) {
+        $errors['email'] = 'Mail déjà utilisé';
     }
 
     // Vérification de la date de naissance
@@ -87,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $password = $_POST['password'];
         $idEnterprise = $_POST['enterprise'];
         $validParticipant = 0;
-    
+
         // On lance la méthode create de la classe Utilisateur
         Utilisateur::create($lastname, $firstname, $pseudo, $birthdate, $email, $password, $idEnterprise, $validParticipant);
 
