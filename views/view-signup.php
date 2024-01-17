@@ -75,7 +75,7 @@
 
         <h2 class="text-center">BRAVO</h2>
         <p class="text-center">Votre inscription a bien été prise en compte</p>
-        <a class="d-block btn btn-dark text-center href="../controllers/controller-signin.php">Connexion</a>
+        <a class="d-block btn btn-dark text-center" href="../controllers/controller-signin.php">Connexion</a>
 
     <?php } ?>
 </div>
