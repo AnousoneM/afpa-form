@@ -1,13 +1,16 @@
 <?php
-
+// Config
 require_once '../config.php';
 
-var_dump($_POST);
+// Models
+require_once '../models/Utilisateur.php';
 
-// regex du nom
+// regex
 $regexName = '/^[a-zA-Z]+$/';
 $regexPseudo = '/^[a-zA-Z_\-\d]+$/';
 
+// permet d'afficher le formulaire
+$showForm = true;
 
 // Je déclenche mes tests uniquement lors d'un POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -72,52 +75,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    // Si il n'y a pas d'erreurs dans notre formulaire, nous inscrire l'utilisateur
+    // Si il n'y a pas d'erreurs dans notre formulaire(via tableau d'erreurs), nous lançons la méthode create de la classe Utilisateur
     if (empty($errors)) {
 
-        try {
+        // On récupère toutes les variables de $_POST et nous les stockons dans des variables
+        $lastname = $_POST['lastname'];
+        $firstname = $_POST['firstname'];
+        $pseudo = $_POST['pseudo'];
+        $birthdate = $_POST['birthdate'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $idEnterprise = $_POST['enterprise'];
+        $validParticipant = 0;
+    
+        // On lance la méthode create de la classe Utilisateur
+        Utilisateur::create($lastname, $firstname, $pseudo, $birthdate, $email, $password, $idEnterprise, $validParticipant);
 
-            // Création d'un objet $db selon la classe PDO
-            $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
-
-            // stockage de ma requete dans une variable
-            $sql = "INSERT INTO `utilisateur` (`nom_participant`,`prenom_participant`, `pseudo_participant`, `naissance_participant`, `mail_participant`, `mdp_participant`, `id_entreprise`, `valide_participant` ) VALUES (:lastname, :firstname, :pseudo, :birthdate, :email, :mdp_participant, :id_enterprise, :valide_participant);";
-
-            // je prepare ma requête pour éviter les injections SQL
-            $query = $db->prepare($sql);
-
-            // on recupère les valeurs des post et nous appliquons un HTMLSPECIALCHARS
-            $lastname = htmlspecialchars($_POST['lastname']);
-            $firstname = htmlspecialchars($_POST['firstname']);
-            $pseudo = htmlspecialchars($_POST['pseudo']);
-            $birthdate = $_POST['birthdate'];
-            $email = $_POST['email'];
-            $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-            $id_enterprise = $_POST['enterprise'];
-            
-            // on relie les valeurs à nos marqueurs nominatifs à l'aide d'un bindValue
-            $query->bindValue(':lastname', $lastname, PDO::PARAM_STR);
-            $query->bindValue(':firstname', $firstname, PDO::PARAM_STR);
-            $query->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
-            $query->bindValue(':birthdate', $birthdate, PDO::PARAM_STR);
-            $query->bindValue(':email', $email, PDO::PARAM_STR);
-            $query->bindValue(':mdp_participant', $password, PDO::PARAM_STR);
-            $query->bindValue(':id_enterprise', $id_enterprise, PDO::PARAM_STR);
-            $query->bindValue(':valide_participant', 1, PDO::PARAM_INT);
-
-            // on execute la requête
-            $query->execute();
-
-        } catch (PDOException $e) {
-            echo 'Erreur : ' . $e->getMessage();
-            die();
-        }
+        // on cache le formulaire si tout est OK
+        $showForm = false;
     }
 }
-
 ?>
-
-
 
 <!-- Intégration de la vue signup dans le contrôleur signup -->
 <?php include '../views/view-signup.php'; ?>
