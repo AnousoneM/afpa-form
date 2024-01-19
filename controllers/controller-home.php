@@ -2,6 +2,8 @@
 // On démarre une session pour manipuler $_SESSION
 session_start();
 
+require_once '../config.php';
+
 var_dump($_SESSION);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

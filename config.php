@@ -6,4 +6,4 @@ define('DBNAME', 'metro_boulot_dodo');
 define('DBUSERNAME', 'ecoride');
 define('DBPASSWORD', 'ecoride');
 
-define('SHOWPAGE','showpage');
+define('URL', $_SERVER["DOCUMENT_ROOT"]);
