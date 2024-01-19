@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $email = $_POST['email'];
         $password = $_POST['password'];
         $idEnterprise = $_POST['enterprise'];
-        $validParticipant = 0;
+        $validParticipant = 1;
 
         // On lance la méthode create de la classe Utilisateur
         Utilisateur::create($lastname, $firstname, $pseudo, $birthdate, $email, $password, $idEnterprise, $validParticipant);

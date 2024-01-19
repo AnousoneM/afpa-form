@@ -17,7 +17,7 @@
                 <input type="password" id="password" name="password">
                 <span class="text-danger"><?= $errors['password'] ?? '' ?></span>
             </div>
-            <p class="text-danger"></p>
+            <p class="text-danger"><?= $errors['connexion'] ?? '' ?></p>
             <button class="d-block my-3 btn btn-success col-3 mx-auto">Se connecter</button>
             <a href="../controllers/controller-signup.php">S'inscrire</a>
         </div>

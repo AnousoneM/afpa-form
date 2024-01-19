@@ -1,12 +1,13 @@
 <?php
+// On démarre une session pour manipuler $_SESSION
+session_start();
 
+var_dump($_SESSION);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // tableau d'erreurs (stockage des erreurs)
     $errors = [];
 }
-
-
 
 ?>
 
