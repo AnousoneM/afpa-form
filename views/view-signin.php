@@ -6,7 +6,7 @@
 <form method="POST" action="" novalidate>
 
     <div class="row justify-content-center">
-        <div class="col-6 p-4 border text-center">
+        <div class="col-lg-4 p-4 border text-center bg-light rounded shadow">
             <div class="text-center">
                 <label for="email">Mail</label>
                 <input type="text" id="email" name="email" value="<?= $_POST['email'] ?? '' ?>">
