@@ -4,17 +4,17 @@
 
 <form method="POST" action="" novalidate>
 
-    <div class="row justify-content-center">
-        <div class="col-lg-3 p-5 border bg-light rounded shadow">
+    <div class="row justify-content-center m-0 p-0">
+        <div class="col-lg-3 col-11 p-5 border bg-light rounded shadow">
 
             <div>
                 <div class="mb-3">
-                    <label for="email">Courriel</label>
+                    <label class="fw-bold" for="email">Courriel</label>
                     <span class="span-error"><?= $errors['email'] ?? '' ?></span>
                     <input class="d-block col-12" type="text" id="email" name="email" value="<?= $_POST['email'] ?? '' ?>">
                 </div>
                 <div class="mb-3">
-                    <label for="password">Mot de passe</label>
+                    <label class="fw-bold" for="password">Mot de passe</label>
                     <span class="span-error"><?= $errors['password'] ?? '' ?></span>
                     <input class="d-block col-12" type="password" id="password" name="password">
                 </div>

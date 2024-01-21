@@ -1,18 +1,22 @@
-<!-- Intégration du head -->
 <?php include '../views/templates/head.php'; ?>
 
-<div class="shadow mt-5 py-4 col-6 mx-auto rounded bg-light">
-    <p class="h2 text-center"><?= $date ?></p>
-    <img src="../assets/img/avatar.jpg" class="d-block rounded-circle col-3 border border-dark mx-auto" alt="Photo de Profil">
-    <h1 class="mb-4 text-center"><?= $_SESSION['user']['pseudo_participant'] ?></h1>
+<div class="shadow mt-5 py-5 col-lg-3 col-11 mx-auto rounded bg-light">
 
-    <div>
-        <button class="d-block btn btn-info my-1 col-4 mx-auto">Ajout d'un Trajet</button>
-        <button class="d-block btn btn-info my-1 col-4 mx-auto">Historique de mes Trajets</button>
-        <button class="d-block btn btn-info text-white my-1 col-4 mx-auto">Mon profil</button>
-        <button class="d-block btn btn-danger my-1 col-4 mx-auto">Déconnexion</button>
+    <h1 class="mb-2 text-center"><?= $_SESSION['user']['pseudo_participant'] ?></h1>
+    <img src="../assets/img/avatar.jpg" class="d-block rounded-circle col-3 border border-dark mx-auto" alt="Photo de Profil">
+    <p class="my-2 text-center"><?= $date ?></p>
+
+    <div class="border text-center py-3 fs-2">
+        <span class="fs-1 fw-bold text-success">120 Km</span>
+    </div>
+
+    <div class="mt-2 justify-content-center">
+        <button class="d-block btn btn-success my-1 col-lg-6 col-9 mx-auto">Ajouter un trajet</button>
+        <button class="d-block btn btn-success my-1 col-lg-6 col-9 mx-auto">Voir mes trajets</button>
+        <a class="d-block btn btn-outline-success my-1 col-lg-6 col-9 mx-auto" href="../controllers/controller-profil.php">Mon profil</a>
+
+        <button class="d-block btn btn-secondary mb-1 mt-2 col-lg-6 col-9 mx-auto">Paramètres</button>
     </div>
 </div>
 
-<!-- Intégration du footer -->
 <?php include '../views/templates/footer.php'; ?>
