@@ -21,7 +21,7 @@
             </div>
             <p class="text-danger text-center"><?= $errors['connexion'] ?? '' ?></p>
             <button class="d-block mt-4 mb-1 btn btn-success col-6 mx-auto">Se connecter</button>
-            <p class="text-center"><a class="text-decoration-none text-dark mx-auto" href="../controllers/controller-signup.php">Je m'inscris</a><p>
+            <p class="text-center"><a class="text-dark mx-auto" href="../controllers/controller-signup.php">Je m'inscris</a><p>
 
         </div>
     </div>

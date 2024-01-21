@@ -1,74 +1,82 @@
 <!-- Intégration du head -->
 <?php include '../views/templates/head.php'; ?>
 
-<h1 class="text-center mt-5">INSCRIPTION</h1>
+<h2 class="text-center my-4">Inscription</h2>
 
-<div class="container my-5 col-8 px-5 py-4 shadow rounded bg-white">
+<div class="container col-4 mb-4 p-5 shadow rounded bg-light">
 
-
+    <!-- permet de cacher le formulaire lors de la validation -->
     <?php if ($showForm) { ?>
 
+        <!-- novalidate permet de mute les required -->
         <form action="" method="POST" novalidate>
-            <div class="my-3">
-                <label class="me-1" for="lastname">Nom</label>
-                <!-- Je fais une value pour conserver les données du formulaire si erreur -->
-                <input type="text" name="lastname" id="lastname" placeholder="ex. DOE" value="<?= $_POST['lastname'] ?? '' ?>">
-                <!-- Message d'erreur si non OK -->
-                <span class="input-warning ms-2"><?= $errors['lastname'] ?? '' ?></span>
-            </div>
 
-            <div class="my-3">
-                <label class="me-1 for=" firstname">Prénom</label>
-                <input type="text" name="firstname" id="firstname" placeholder="ex. John" value="<?= $_POST['firstname'] ?? '' ?>">
-                <span class="input-warning ms-2"><?= $errors['firstname'] ?? '' ?></span>
-            </div>
+            <p class="fs-2 text-center text-success"><i class="fa-solid fa-house-chimney"></i><i class="ms-1 fa-solid fa-bicycle"></i><i class="ms-5 fa-solid fa-building"></i></p>
 
-            <div class="my-3">
-                <label class="me-1 for=" pseudo">Pseudo</label>
-                <input type="text" name="pseudo" id="pseudo" placeholder="ex. Roronoa76" value="<?= $_POST['pseudo'] ?? '' ?>">
-                <span class="input-warning ms-2"><?= $errors['pseudo'] ?? '' ?></span>
-            </div>
-
-            <div class="my-3">
-                <label class="me-1 for=" birthdate">Date de naissance</label>
-                <input type="date" name="birthdate" id="birthdate" value="<?= $_POST['birthdate'] ?? '' ?>">
-                <span class="input-warning ms-2"><?= $errors['birthdate'] ?? '' ?></span>
-            </div>
-
-            <div class="my-3">
-                <label class="me-1 for="">Courriel</label>
-            <input type=" email" name="email" id="email" placeholder="ex. mon-mail@mail.fr" value="<?= $_POST['email'] ?? '' ?>">
-                    <span class="input-warning ms-2"><?= $errors['email'] ?? '' ?></span>
-            </div>
-
-            <label class="me-1 for=" enterprise">Entreprise</label>
-            <select name="enterprise" id="enterprise">
+            <label class="me-1 fw-bold" for="enterprise">Entreprise</label>
+            <span class="input-warning ms-2"><?= $errors['enterprise'] ?? '' ?></span>
+            <select class="form-control <?= isset($errors['enterprise']) ? 'is-invalid' : '' ?> <?= isset($_POST['enterprise']) && !isset($errors['enterprise']) ? 'is-valid' : '' ?>" name="enterprise" id="enterprise">
                 <option value="" selected disabled>-- Veuillez sélectionner votre entreprise --</option>
                 <option value="1" <?= isset($_POST['enterprise']) && $_POST['enterprise'] == 1 ? 'selected' : '' ?>>Bad Company</option>
                 <option value="2" <?= isset($_POST['enterprise']) && $_POST['enterprise'] == 2 ? 'selected' : '' ?>>Afpa</option>
             </select>
-            <span class="input-warning ms-2"><?= $errors['enterprise'] ?? '' ?></span>
 
             <div class="my-3">
-                <label class="me-1 for=" password">Mot de passe</label>
-                <input type="password" name="password" id="password">
-                <span class="input-warning ms-2"><?= $errors['password'] ?? '' ?></span>
+                <label class="me-1 fw-bold" for="lastname">Nom</label>
+                <span class="input-warning ms-2"><?= $errors['lastname'] ?? '' ?></span>
+                <!-- Je fais une value pour conserver les données du formulaire si erreur -->
+                <input class="form-control <?= isset($errors['lastname']) ? 'is-invalid' : '' ?> <?= isset($_POST['lastname']) && !isset($errors['lastname']) ? 'is-valid' : '' ?>" type="text" name="lastname" id="lastname" placeholder="ex. DOE" value="<?= $_POST['lastname'] ?? '' ?>">
+                <!-- Message d'erreur si non OK -->
+
             </div>
 
             <div class="my-3">
-                <label class="me-1 for=" confirmPassword">Confirmation du mot de passe</label>
-                <input type="password" name="confirmPassword" id="confirmPassword">
+                <label class="me-1 fw-bold" for="firstname">Prénom</label>
+                <span class="input-warning ms-2"><?= $errors['firstname'] ?? '' ?></span>
+                <input class="form-control <?= isset($errors['lastname']) ? 'is-invalid' : '' ?> <?= isset($_POST['lastname']) && !isset($errors['lastname']) ? 'is-valid' : '' ?>" type="text" name="firstname" id="firstname" placeholder="ex. John" value="<?= $_POST['firstname'] ?? '' ?>">
+
+            </div>
+
+            <div class="my-3">
+                <label class="me-1 fw-bold" for="pseudo">Pseudo</label>
+                <span class="input-warning ms-2"><?= $errors['pseudo'] ?? '' ?></span>
+                <input class="form-control <?= isset($errors['pseudo']) ? 'is-invalid' : '' ?> <?= isset($_POST['pseudo']) && !isset($errors['pseudo']) ? 'is-valid' : '' ?>" type="text" name="pseudo" id="pseudo" placeholder="ex. Roronoa76" value="<?= $_POST['pseudo'] ?? '' ?>">
+
+            </div>
+
+            <div class="my-3">
+                <label class="me-1 fw-bold" for="birthdate">Date de naissance</label>
+                <span class="input-warning ms-2"><?= $errors['birthdate'] ?? '' ?></span>
+                <input class="form-control <?= isset($errors['birthdate']) ? 'is-invalid' : '' ?> <?= isset($_POST['birthdate']) && !isset($errors['birthdate']) ? 'is-valid' : '' ?>" type="date" name="birthdate" id="birthdate" value="<?= $_POST['birthdate'] ?? '' ?>">
+
+            </div>
+
+            <div class="my-3">
+                <label class="me-1 fw-bold" for="email">Courriel</label>
+                <span class=" input-warning ms-2"><?= $errors['email'] ?? '' ?></span>
+                <input class="form-control <?= isset($errors['email']) ? 'is-invalid' : '' ?> <?= isset($_POST['email']) && !isset($errors['email']) ? 'is-valid' : '' ?>" type="email" name="email" id="email" placeholder="ex. mon-mail@mail.fr" value="<?= $_POST['email'] ?? '' ?>">
+            </div>
+
+            <div class="my-3">
+                <label class="me-1 fw-bold" for="password">Mot de passe</label>
+                <span class="input-warning ms-2"><?= $errors['password'] ?? '' ?></span>
+                <input class="form-control <?= isset($errors['password']) ? 'is-invalid' : '' ?> <?= isset($_POST['password']) && !isset($errors['password']) ? 'is-valid' : '' ?>" type="password" name="password" id="password">
+            </div>
+
+            <div class="my-3">
+                <label class="me-1 fw-bold" for="confirmPassword">Confirmation du mot de passe</label>
                 <span class="input-warning ms-2"><?= $errors['confirmPassword'] ?? '' ?></span>
+                <input class="form-control <?= isset($errors['confirmPassword']) ? 'is-invalid' : '' ?> <?= isset($_POST['confirmPassword']) && !isset($errors['confirmPassword']) ? 'is-valid' : '' ?>" type="password" name="confirmPassword" id="confirmPassword">
             </div>
 
             <div class="my-4">
                 <input name="cgu" id="cgu" type="checkbox">
-                <label class="me-1 for=" cgu">J'accepte les CGU</label>
+                <label class="me-1 fw-bold" for="cgu">J'accepte les CGU</label>
                 <span class="input-warning ms-2"><?= $errors['cgu'] ?? '' ?></span>
             </div>
 
-            <button class="d-block my-3 btn btn-dark">S'enregistrer</button>
-            <a href="../controllers/controller-signin.php">J'ai déjà un compte</a>
+            <button class="d-block mx-auto mt-3 mb-1 btn btn-dark">S'enregistrer</button>
+            <p class="text-center"><a class="text-dark" href="../controllers/controller-signin.php">J'ai déjà un compte</a></p>
 
         </form>
     <?php } else { ?>

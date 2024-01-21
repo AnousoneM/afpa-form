@@ -9,13 +9,10 @@ require_once '../config.php';
 // Models
 require_once '../models/Utilisateur.php';
 
-var_dump($_POST);
-
 // Nous déclenchons nos vérifications uniquement lorsqu'un submit de type POST est détecté
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // tableau d'erreurs (stockage des erreurs)
     $errors = [];
-
 
     // Je vérifie si les champs sont vides : email puis password
     if (empty($_POST['email'])) {
