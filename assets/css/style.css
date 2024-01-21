@@ -14,3 +14,9 @@ body {
 .btn-aqua {
     background-color: rgb(0, 135, 190);
 }
+
+.span-error {
+    color: red;
+    font-size: 0.8rem;
+    font-style: italic;
+}

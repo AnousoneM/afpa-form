@@ -26,9 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors['password'] = 'Veuillez saisir votre mot de passe';
     }
 
+    // ici commence les tests
     if (empty($errors)) {
-        // ici commence les tests
-
         // Je vérifie que le mail existe dans la bdd
         if (!Utilisateur::checkMailExists($_POST['email'])) {
             $errors['email'] = 'Utilisateur Inconnu';
@@ -45,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // je fais une redirection vers le controller home
                 header('Location: controller-home.php');
             } else {
-                $errors['connexion'] = 'Mauvais mdp';
+                $errors['connexion'] = 'Mauvais mot de passe';
             }
         }
     }
