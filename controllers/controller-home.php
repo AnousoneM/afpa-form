@@ -2,6 +2,13 @@
 // On démarre une session pour manipuler $_SESSION
 session_start();
 
+var_dump($_SESSION);
+
+// Si l'utilisateur n'est pas connecté, on le redirige vers la page de connexion
+if (!isset($_SESSION['user'])) {
+    header('Location: ../index.php');
+    exit();
+}
 
 require_once '../config.php';
 
