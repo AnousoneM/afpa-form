@@ -103,4 +103,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <!-- Intégration de la vue signup dans le contrôleur signup -->
-<?php include '../views/view-signup.php'; ?>
+<?php include '../views/view-addRide.php'; ?>
