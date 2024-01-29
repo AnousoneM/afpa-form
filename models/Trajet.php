@@ -41,4 +41,43 @@ class Trajet
             die();
         }
     }
+
+
+    /**
+     * 
+     * récupère tous les trajets d'un utilisateur
+     * 
+     * @param int $user_id Id de l'utilisateur
+     * 
+     * @return array tableau contenant tous les trajets d'un utilisateur
+     * 
+     */
+    public static function getAllTrajets(int $user_id): array
+    {
+        try {
+            // Création d'un objet $db selon la classe PDO
+            $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
+
+            // stockage de ma requete dans une variable
+            $sql = "SELECT * FROM trajet WHERE id_utilisateur = :id_utilisateur";
+
+            // je prepare ma requête pour éviter les injections SQL
+            $query = $db->prepare($sql);
+
+            // on relie les paramètres à nos marqueurs nominatifs à l'aide d'un bindValue
+            $query->bindValue(':id_utilisateur', intval($user_id), PDO::PARAM_INT);
+
+            // on execute la requête
+            $query->execute();
+
+            // on récupère le résultat de la requête dans une variable $result
+            $result = $query->fetchAll();
+
+            // on retourne le résultat
+            return $result;
+        } catch (PDOException $e) {
+            echo 'Erreur : ' . $e->getMessage();
+            die();
+        }
+    }
 }
