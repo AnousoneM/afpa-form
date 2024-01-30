@@ -59,7 +59,7 @@ class Trajet
             $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
 
             // stockage de ma requete dans une variable
-            $sql = "SELECT * FROM trajet WHERE id_utilisateur = :id_utilisateur";
+            $sql = "SELECT * FROM trajet NATURAL JOIN transport WHERE id_utilisateur = :id_utilisateur";
 
             // je prepare ma requête pour éviter les injections SQL
             $query = $db->prepare($sql);

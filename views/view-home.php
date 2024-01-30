@@ -13,7 +13,7 @@
     <div class="mt-2 justify-content-center">
 
         <a class="d-block btn btn-success my-1 col-lg-6 col-9 mx-auto" href="../controllers/controller-addRide.php">Ajouter un trajet</a>
-        <button class="d-block btn btn-success my-1 col-lg-6 col-9 mx-auto">Voir mes trajets</button>
+        <a class="d-block btn btn-success my-1 col-lg-6 col-9 mx-auto" href="../controllers/controller-rides.php">Voir mes trajets</a>
         <a class="d-block btn btn-outline-success my-1 col-lg-6 col-9 mx-auto" href="../controllers/controller-profil.php">Mon profil</a>
 
         <button class="d-block btn btn-secondary mb-1 mt-2 col-lg-6 col-9 mx-auto">Paramètres</button>
