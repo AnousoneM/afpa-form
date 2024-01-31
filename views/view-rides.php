@@ -1,35 +1,40 @@
 <?php include '../views/templates/head.php'; ?>
 
-<div class="shadow my-5 py-5 col-lg-3 col-11 mx-auto rounded bg-light">
-    <table class="table">
+<h2 class="text-center my-4">Mes trajets</h2>
+
+<div class="shadow mb-4 py-5 px-5 col-lg-6 col-11 mx-auto rounded bg-light">
+
+    <table class="table table-sm table-striped text-center border">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Date</th>
+                <th scope="col">Distance</th>
+                <th scope="col">Transport</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-            </tr>
+
+            <?php foreach (Trajet::getAllTrajets($_SESSION['user']['id_utilisateur']) as $ride) { ?>
+
+                <tr class="align-middle">
+                    <td><?= $ride['dateFr'] ?></td>
+                    <td><?= $ride['distance_trajet'] ?>m</td>
+                    <td><?= $ride['type_transport'] ?></td>
+                    <td><button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button></td>
+                </tr>
+
+            <?php } ?>
+
         </tbody>
     </table>
+
+    <div class="text-center">
+        <a class="btn btn-outline-secondary" href="../controllers/controller-home.php">Home</a>
+        <a class="btn btn-success" href="../controllers/controller-addRide.php">Ajouter un trajet</a>
+    </div>
+
 </div>
+
 
 <?php include '../views/templates/footer.php'; ?>

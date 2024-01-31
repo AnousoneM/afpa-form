@@ -3,6 +3,13 @@
 // une créé une session pour pouvoir manipuler $_SESSION
 session_start();
 
+// Si l'utilisateur n'est pas connecté, on le redirige vers la page de connexion
+if (isset($_SESSION['user'])) {
+    header('Location: controller-home.php');
+    exit();
+}
+
+
 // Config
 require_once '../config.php';
 

@@ -1,6 +1,6 @@
 <?php include '../views/templates/head.php'; ?>
 
-<div class="shadow my-5 py-5 col-lg-3 col-11 mx-auto rounded bg-light">
+<div class="shadow my-5 py-5 col-lg-4 col-11 mx-auto rounded bg-light">
 
     <h1 class="mb-2 text-center"><?= $_SESSION['user']['pseudo_participant'] ?></h1>
     <img src="../assets/img/avatar.jpg" class="d-block rounded-circle col-3 border border-dark mx-auto" alt="Photo de Profil">
@@ -35,7 +35,7 @@
             <li class="list-group-item d-flex justify-content-between align-items-start">
                 <div class="ms-2 me-auto">
                     <div class="fw-bold">Descriptif</div>
-                    <?= $_SESSION['user']['description_participant'] == NULL ? '<i>à compléter</i>' : '' ?>
+                    <?= $_SESSION['user']['description_participant'] == NULL ? '<i class="text-body-secondary">à compléter</i>' : '' ?>
                 </div>
             </li>
         </ul>

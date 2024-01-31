@@ -2,6 +2,12 @@
 
 session_start();
 
+// Si l'utilisateur n'est pas connecté, on le redirige vers la page de connexion
+if (!isset($_SESSION['user'])) {
+    header('Location: ../index.php');
+    exit();
+}
+
 // Config
 require_once '../config.php';
 
@@ -45,7 +51,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         Trajet::create($_POST['dateTrajet'], $_POST['distance'], $_POST['temps'], $_POST['transport'], $id_utilisateur);
 
         // Je redirige vers la page d'accueil
-        header('Location: controller-home.php');
+        header('Location: controller-rides.php');
+        exit();
     }
 }
 ?>

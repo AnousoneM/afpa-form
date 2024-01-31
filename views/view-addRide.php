@@ -5,7 +5,6 @@
 
 <div class="mx-auto col-lg-4 col-11 mb-4 p-lg-5 p-3 shadow rounded bg-light">
 
-
         <!-- novalidate permet de mute les required -->
         <form action="" method="POST" novalidate>
 

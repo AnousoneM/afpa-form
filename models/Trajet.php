@@ -45,7 +45,7 @@ class Trajet
 
     /**
      * 
-     * récupère tous les trajets d'un utilisateur
+     * récupère tous les trajets d'un utilisateur selon son id
      * 
      * @param int $user_id Id de l'utilisateur
      * 
@@ -59,7 +59,7 @@ class Trajet
             $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
 
             // stockage de ma requete dans une variable
-            $sql = "SELECT * FROM trajet NATURAL JOIN transport WHERE id_utilisateur = :id_utilisateur";
+            $sql = "SELECT *, DATE_FORMAT(`date_trajet`, '%d/%m/%Y') AS dateFr FROM trajet NATURAL JOIN transport WHERE id_utilisateur = :id_utilisateur ORDER BY date_trajet DESC, id_trajet DESC";
 
             // je prepare ma requête pour éviter les injections SQL
             $query = $db->prepare($sql);
