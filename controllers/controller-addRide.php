@@ -50,6 +50,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // J'execute la méthode create de la classe Trajet
         Trajet::create($_POST['dateTrajet'], $_POST['distance'], $_POST['temps'], $_POST['transport'], $id_utilisateur);
 
+        // On créé un message de session pour afficher un message de succès
+        $_SESSION['message'] = [
+            'add' => 'success'
+        ];
+
         // Je redirige vers la page d'accueil
         header('Location: controller-rides.php');
         exit();

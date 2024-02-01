@@ -8,12 +8,33 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 
-
 // Config
 require_once '../config.php';
 
 // Models
 require_once '../models/Trajet.php';
+
+// Si le formulaire est envoyé
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    // Si le formulaire est envoyé pour effacer un trajet
+    if (isset($_POST['delete'])) {
+
+        // On efface le trajet
+        if (isset($_POST['id_trajet'])) {
+            Trajet::delete($_POST['id_trajet']);
+        }
+
+        // On créé un message de session pour afficher un message de succès
+        $_SESSION['message'] = [
+            'delete' => 'success'
+        ];
+
+        // On redirige vers la page de profil
+        header('Location: controller-rides.php');
+        exit();
+    }
+}
 
 ?>
 

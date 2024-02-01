@@ -80,4 +80,35 @@ class Trajet
             die();
         }
     }
+
+    /**
+     * Methode permettant de supprimer un trajet
+     * 
+     * @param int $id_trajet Id du trajet
+     * 
+     * @return void
+     */
+    public static function delete(int $id_trajet): void
+    {
+        try {
+            // Création d'un objet $db selon la classe PDO
+            $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
+
+            // stockage de ma requete dans une variable
+            $sql = "DELETE FROM trajet WHERE id_trajet = :id_trajet";
+
+            // je prepare ma requête pour éviter les injections SQL
+            $query = $db->prepare($sql);
+
+            // on relie les paramètres à nos marqueurs nominatifs à l'aide d'un bindValue
+            $query->bindValue(':id_trajet', intval($id_trajet), PDO::PARAM_INT);
+
+            // on execute la requête
+            $query->execute();
+            
+        } catch (PDOException $e) {
+            echo 'Erreur : ' . $e->getMessage();
+            die();
+        }
+    }
 }

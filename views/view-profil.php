@@ -10,6 +10,12 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item d-flex justify-content-between align-items-start">
                 <div class="ms-2 me-auto">
+                    <div class="fw-bold">Entreprise</div>
+                    <?= $_SESSION['user']['nom_entreprise'] ?>
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
                     <div class="fw-bold">Nom</div>
                     <?= $_SESSION['user']['nom_participant'] ?>
                 </div>
@@ -34,14 +40,14 @@
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-start">
                 <div class="ms-2 me-auto">
-                    <div class="fw-bold">Descriptif</div>
-                    <?= $_SESSION['user']['description_participant'] == NULL ? '<i class="text-body-secondary">à compléter</i>' : '' ?>
+                    <div class="fw-bold">Description</div>
+                    <?= $_SESSION['user']['description_participant'] == NULL ? '<i class="text-body-secondary">A remplir</i>' : '' ?>
                 </div>
-            </li>
         </ul>
-
-        <a href="../controllers/controller-deconnection.php" class="d-block btn btn-danger my-1 mt-5 col-lg-6 col-9 mx-auto">Déconnexion</button>
-        <a class="d-block btn btn-secondary my-1 col-lg-6 col-9 mx-auto" href="../controllers/controller-home.php">Home</a>
+        </li>
+        <a class="d-block btn btn-outline-secondary my-3 col-lg-6 col-9 mx-auto" href="../controllers/controller-update.php">Modifier</a>
+        <a class="d-block btn btn-secondary my-1 col-lg-6 col-9 mx-auto" href="../controllers/controller-home.php">Accueil</a>
+        <a class="d-block btn btn-danger my-1 col-lg-6 col-9 mx-auto" href="../controllers/controller-deconnection.php">Déconnexion</a>
     </div>
 </div>
 
