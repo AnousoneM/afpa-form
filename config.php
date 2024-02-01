@@ -2,7 +2,7 @@
 
 // penser à mettre à jour votre config !!!!!
 
-define('DBNAME', 'metro_boulot_dodo');
+define('DBNAME', 'ecoride');
 define('DBUSERNAME', 'ecoride');
 define('DBPASSWORD', 'ecoride');
 
