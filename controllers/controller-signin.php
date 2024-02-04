@@ -47,6 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 unset($_SESSION['user']['mdp_participant']);
                 // je fais une redirection vers le controller home
                 header('Location: controller-home.php');
+                exit();
             } else {
                 $errors['connexion'] = 'Mauvais mot de passe';
             }

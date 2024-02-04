@@ -4,7 +4,7 @@ class Trajet
 {
     /**
      * 
-     * création d'un trajet
+     * Méthode de créer un trajet
      * 
      * @param string $date_trajet Date du trajet
      * @param string $distance_trajet Distance du trajet
@@ -45,7 +45,7 @@ class Trajet
 
     /**
      * 
-     * récupère tous les trajets d'un utilisateur selon son id
+     * Méthode permettant de récupèrer tous les trajets d'un utilisateur selon son id
      * 
      * @param int $user_id Id de l'utilisateur
      * 

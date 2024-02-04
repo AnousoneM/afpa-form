@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+// Config
+require_once '../config.php';
+
 // supprime toutes les variables de session
 session_unset();
 

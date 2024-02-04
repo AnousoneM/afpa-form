@@ -20,4 +20,5 @@
     </div>
 </div>
 
+<!-- Intégration du footer -->
 <?php include '../views/templates/footer.php'; ?>

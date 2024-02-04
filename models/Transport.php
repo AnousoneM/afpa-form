@@ -3,7 +3,7 @@
 class Transport
 {
     /**
-     * Recupère toutes les transports   
+     * Méthode de recupèrer tous les types de transports   
      * 
      * @return array tableau contenant toutes les entreprises
      */

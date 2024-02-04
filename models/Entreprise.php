@@ -3,7 +3,7 @@
 class Entreprise
 {
     /**
-     * Recupère toutes les entreprises
+     * Méthode permettant de recupèrer toutes les entreprises
      * 
      * @return array tableau contenant toutes les entreprises
      */

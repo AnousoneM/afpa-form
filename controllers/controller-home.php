@@ -8,6 +8,7 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 
+// Config
 require_once '../config.php';
 
 // mise en place de la variable date en fr : jour mois année -> 01 Janvier 2024
