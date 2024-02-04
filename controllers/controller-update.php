@@ -143,6 +143,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // On change les valeurs de la session pour afficher les nouvelles valeurs
         $_SESSION['user'] = Utilisateur::getInfos($email);
+        // on pense à ne pas stocker le mdp à l'aide d'un unset
+        unset($_SESSION['user']['mdp_participant']);
 
         // On redirige l'utilisateur vers la page de profil
         header('Location: controller-profil.php');

@@ -110,7 +110,7 @@ class Utilisateur
             $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
 
             // stockage de ma requete dans une variable
-            $sql = "SELECT * FROM `utilisateur` WHERE `mail_participant` = :mail";
+            $sql = "SELECT *, DATE_FORMAT(`naissance_participant`, '%d/%m/%Y') AS dateFr  FROM `utilisateur` WHERE `mail_participant` = :mail";
 
             // je prepare ma requête pour éviter les injections SQL
             $query = $db->prepare($sql);
@@ -194,7 +194,7 @@ class Utilisateur
             $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
 
             // stockage de ma requete dans une variable
-            $sql = "SELECT * FROM `utilisateur` NATURAL JOIN `entreprise` WHERE `mail_participant` = :mail";
+            $sql = "SELECT *, DATE_FORMAT(`naissance_participant`, '%d/%m/%Y') AS dateFr FROM `utilisateur` NATURAL JOIN `entreprise` WHERE `mail_participant` = :mail";
 
             // je prepare ma requête pour éviter les injections SQL
             $query = $db->prepare($sql);

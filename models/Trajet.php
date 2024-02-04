@@ -105,7 +105,36 @@ class Trajet
 
             // on execute la requête
             $query->execute();
-            
+        } catch (PDOException $e) {
+            echo 'Erreur : ' . $e->getMessage();
+            die();
+        }
+    }
+
+    /**
+     * Methode permettant de supprimer tous les trajets d'un utilisateur
+     * 
+     * @param int $id_trajet Id du trajet
+     * 
+     * @return void
+     */
+    public static function deleteAll(int $id_utilisateur): void
+    {
+        try {
+            // Création d'un objet $db selon la classe PDO
+            $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
+
+            // stockage de ma requete dans une variable
+            $sql = "DELETE FROM trajet WHERE id_utilisateur = :id_utilisateur";
+
+            // je prepare ma requête pour éviter les injections SQL
+            $query = $db->prepare($sql);
+
+            // on relie les paramètres à nos marqueurs nominatifs à l'aide d'un bindValue
+            $query->bindValue(':id_utilisateur', intval($id_utilisateur), PDO::PARAM_INT);
+
+            // on execute la requête
+            $query->execute();
         } catch (PDOException $e) {
             echo 'Erreur : ' . $e->getMessage();
             die();

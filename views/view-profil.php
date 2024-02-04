@@ -39,7 +39,7 @@
             <li class="list-group-item d-flex justify-content-between align-items-start">
                 <div class="ms-2 me-auto">
                     <div class="fw-bold">Date de naissance</div>
-                    <?= $_SESSION['user']['naissance_participant'] ?>
+                    <?= $_SESSION['user']['dateFr'] ?>
                 </div>
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-start">
@@ -51,7 +51,7 @@
             <li class="list-group-item d-flex justify-content-between align-items-start">
                 <div class="ms-2 me-auto">
                     <div class="fw-bold">Description</div>
-                    <?= $_SESSION['user']['description_participant'] == "NULL" ? '<i class="text-body-secondary">A remplir</i>' : $_SESSION['user']['description_participant'] ?>
+                    <?= $_SESSION['user']['description_participant'] == NULL ? '<i class="text-body-secondary">A remplir</i>' : $_SESSION['user']['description_participant'] ?>
                 </div>
         </ul>
         </li>
@@ -72,10 +72,9 @@
                     <div class="modal-footer bg-danger">
                         <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Annuler</button>
 
-                        <form action="" method="POST">
+                        <form action="../controllers/controller-deleteProfil.php" method="POST">
 
-                            <input type="hidden" name="id_trajet" value="<?= $_SESSION['user']['id_participant'] ?>">
-                            <input type="submit" class="btn btn-danger btn-sm" name="delete" value="Effacer">
+                            <input type="submit" class="btn btn-outline-light btn-sm" name="delete" value="Effacer">
 
                         </form>
                     </div>
