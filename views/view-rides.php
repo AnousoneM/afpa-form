@@ -2,7 +2,7 @@
 
 <h2 class="text-center my-4">Mes trajets</h2>
 
-<div class="shadow mb-4 py-5 px-5 col-lg-6 col-11 mx-auto rounded bg-light">
+<div class="shadow mb-4 p-5 col-lg-6 col-11 mx-auto rounded bg-light">
 
     <!-- Messages sur les trajets -->
     <?php if (isset($_SESSION['message']['add']) && $_SESSION['message']['add'] == 'success') { ?>
@@ -50,7 +50,7 @@
     <?php foreach (Trajet::getAllTrajets($_SESSION['user']['id_utilisateur']) as $ride) { ?>
         <!-- Modal de suppression-->
         <div class="modal fade" id="deleteModal-<?= $ride['id_trajet'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header bg-light">
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

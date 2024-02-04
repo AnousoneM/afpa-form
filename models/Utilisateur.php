@@ -49,6 +49,53 @@ class Utilisateur
     }
 
     /**
+     * Méthode permettant de mettre à jour un utilisateur
+     * 
+     * @param string $lastname Nom de l'utilisateur
+     * @param string $firstname Prénom de l'utilisateur
+     * @param string $pseudo Pseudo de l'utilisateur
+     * @param string $birthdate Date de naissance de l'utilisateur
+     * @param string $email Adresse mail de l'utilisateur
+     * @param string $idEnterprise Id de l'entreprise de l'utilisateur
+     * @param string $photo Photo de l'utilisateur
+     * @param string $description Description de l'utilisateur
+     *  
+     * @return void
+     * 
+     */
+    public static function update(int $id_utilisateur, string $lastname, string $firstname, string $pseudo, string $birthdate, string $email, string $idEnterprise, string $photo, string $description)
+    {
+        // le try and catch permet de gérer les erreurs, nous allons l'utiliser pour gérer les erreurs liées à la base de données
+        try {
+            // Création d'un objet $db selon la classe PDO
+            $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
+
+            // stockage de ma requete dans une variable
+            $sql = "UPDATE `utilisateur` SET `nom_participant` = :lastname,`prenom_participant` = :firstname, `pseudo_participant` = :pseudo, `naissance_participant` = :birthdate, `mail_participant` = :email, `id_entreprise` = :id_enterprise, `photo_participant` = :photo, `description_participant` = :description WHERE `id_utilisateur` = :id_utilisateur;";
+
+            // je prepare ma requête pour éviter les injections SQL
+            $query = $db->prepare($sql);
+
+            // on relie les paramètres à nos marqueurs nominatifs à l'aide d'un bindValue
+            $query->bindValue(':id_utilisateur', intval($id_utilisateur), PDO::PARAM_INT);
+            $query->bindValue(':lastname', htmlspecialchars($lastname), PDO::PARAM_STR);
+            $query->bindValue(':firstname', htmlspecialchars($firstname), PDO::PARAM_STR);
+            $query->bindValue(':pseudo', htmlspecialchars($pseudo), PDO::PARAM_STR);
+            $query->bindValue(':birthdate', $birthdate, PDO::PARAM_STR);
+            $query->bindValue(':email', $email, PDO::PARAM_STR);
+            $query->bindValue(':id_enterprise', intval($idEnterprise), PDO::PARAM_STR);
+            $query->bindValue(':photo', $photo, PDO::PARAM_STR);
+            $query->bindValue(':description', $description, PDO::PARAM_STR); // htmlspecialchars($description) si besoin
+
+            // on execute la requête
+            $query->execute();
+        } catch (PDOException $e) {
+            echo 'Erreur : ' . $e->getMessage();
+            die();
+        }
+    }
+
+    /**
      * Methode permettant de vérifier si un mail existe dans la base de données
      * 
      * @param string $email Adresse mail de l'utilisateur
@@ -163,6 +210,37 @@ class Utilisateur
 
             // on retourne le résultat
             return $result;
+        } catch (PDOException $e) {
+            echo 'Erreur : ' . $e->getMessage();
+            die();
+        }
+    }
+
+    /**
+     * Methide permettant de supprimer un utilisateur
+     * 
+     * @param int $id_utilisateur Id de l'utilisateur
+     * 
+     * @return void
+     */
+    public static function delete(int $id_utilisateur): void
+    {
+        // le try and catch permet de gérer les erreurs, nous allons l'utiliser pour gérer les erreurs liées à la base de données
+        try {
+            // Création d'un objet $db selon la classe PDO
+            $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
+
+            // stockage de ma requete dans une variable
+            $sql = "DELETE FROM `utilisateur` WHERE `id_utilisateur` = :id_utilisateur";
+
+            // je prepare ma requête pour éviter les injections SQL
+            $query = $db->prepare($sql);
+
+            // on relie les paramètres à nos marqueurs nominatifs à l'aide d'un bindValue
+            $query->bindValue(':id_utilisateur', $id_utilisateur, PDO::PARAM_INT);
+
+            // on execute la requête
+            $query->execute();
         } catch (PDOException $e) {
             echo 'Erreur : ' . $e->getMessage();
             die();

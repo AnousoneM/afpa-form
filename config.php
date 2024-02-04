@@ -2,7 +2,7 @@
 
 // penser à mettre à jour votre config !!!!!
 
-define('DBNAME', 'ecoride');
+define('DBNAME', 'ecoride;charset=UTF8');
 define('DBUSERNAME', 'ecoride');
 define('DBPASSWORD', 'ecoride');
 
