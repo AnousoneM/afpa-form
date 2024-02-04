@@ -3,7 +3,7 @@
 
 <h2 class="text-center my-4">Inscription</h2>
 
-<div class="mx-auto col-lg-4 col-11 mb-4 p-lg-5 p-3 shadow rounded bg-light">
+<div class="shadow mx-auto col-lg-4 col-11 mb-4 p-lg-5 p-3 rounded bg-light">
 
     <!-- permet de cacher le formulaire lors de la validation -->
     <?php if ($showForm) { ?>

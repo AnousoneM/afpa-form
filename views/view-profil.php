@@ -1,6 +1,6 @@
 <?php include '../views/templates/head.php'; ?>
 
-<div class="shadow my-5 p-5 col-lg-4 col-11 mx-auto rounded bg-light">
+<div class="shadow my-5 p-lg-5 p-1 col-lg-4 col-11 mx-auto rounded bg-light">
 
     <!-- Messages sur les trajets -->
     <?php if (isset($_SESSION['message']['update']) && $_SESSION['message']['update'] == 'success') { ?>
@@ -55,9 +55,9 @@
                 </div>
         </ul>
         </li>
-        <a class="d-block btn btn-outline-secondary mt-4 col-lg-6 col-9 mx-auto" href="../controllers/controller-update.php">Modifier</a>
-        <a class="d-block btn btn-secondary my-1 col-lg-6 col-9 mx-auto" href="../controllers/controller-home.php">Accueil</a>
-        <button class="d-block btn btn-danger mt-3 col-lg-6 col-9 mx-auto" data-bs-toggle="modal" data-bs-target="#deleteModal">Supprimer</button>
+        <a class="d-block btn btn-outline-secondary mt-4 col-lg-6 col-12 mx-auto" href="../controllers/controller-update.php">Modifier</a>
+        <a class="d-block btn btn-secondary my-1 col-lg-6 col-12 mx-auto" href="../controllers/controller-home.php">Accueil</a>
+        <button class="d-block btn btn-danger mt-3 col-lg-6 col-12 mx-auto" data-bs-toggle="modal" data-bs-target="#deleteModal">Supprimer</button>
 
          <!-- Modal de suppression du profil-->
          <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -3,7 +3,7 @@
 
 <h2 class="text-center my-4">Update</h2>
 
-<div class="mx-auto col-lg-4 col-11 mb-4 p-lg-5 p-3 shadow rounded bg-light">
+<div class="shadow mx-auto col-lg-4 col-11 mb-4 p-lg-5 p-3 rounded bg-light">
 
         <!-- novalidate permet de mute les required -->
         <form action="" method="POST" enctype="multipart/form-data" novalidate>

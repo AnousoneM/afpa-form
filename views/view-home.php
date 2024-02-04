@@ -1,6 +1,6 @@
 <?php include '../views/templates/head.php'; ?>
 
-<div class="shadow my-5 py-5 col-lg-3 col-11 mx-auto rounded bg-light">
+<div class="shadow my-5 py-5 col-lg-4 col-11 mx-auto rounded bg-light">
 
     <h1 class="mb-2 text-center"><?= $_SESSION['user']['pseudo_participant'] ?></h1>
     <img src="../assets/img/profiles/<?= $_SESSION['user']['photo_participant'] == NULL ? 'default.jpg' : $_SESSION['user']['photo_participant'] ?>" class="d-block rounded-circle col-3 border border-dark mx-auto" alt="Photo de Profil">

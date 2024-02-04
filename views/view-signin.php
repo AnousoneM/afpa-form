@@ -5,7 +5,7 @@
 <form method="POST" action="" novalidate>
 
     <div class="row justify-content-center m-0 p-0">
-        <div class="col-lg-3 col-11 p-5 border bg-light rounded shadow">
+        <div class="shadow col-lg-4 col-11 p-5 border bg-light rounded">
 
             <div>
                 <div class="mb-3">

@@ -3,7 +3,7 @@
 
 <h2 class="text-center my-4">Ajouter un trajet</h2>
 
-<div class="mx-auto col-lg-4 col-11 mb-4 p-lg-5 p-3 shadow rounded bg-light">
+<div class="shadow mx-auto col-lg-4 col-11 mb-4 p-lg-5 p-3 rounded bg-light">
 
         <!-- novalidate permet de mute les required -->
         <form action="" method="POST" novalidate>
@@ -38,8 +38,8 @@
                 <input class="form-control <?= isset($errors['temps']) ? 'is-invalid' : '' ?> <?= isset($_POST['temps']) && !isset($errors['temps']) ? 'is-valid' : '' ?>" type="number" name="temps" id="temps" value="<?= $_POST['temps'] ?? '' ?>">
             </div>
 
-            <button class="d-block mx-auto mt-3 mb-1 btn btn-dark col-5">Enregistrer</button>
-            <a class="btn btn-secondary d-block mx-auto col-5" href="../controllers/controller-home.php" type="button" >Annuler</a>
+            <button class="d-block mx-auto mt-3 mb-1 btn btn-dark col-lg-5 col-12">Enregistrer</button>
+            <a class="btn btn-secondary d-block mx-auto col-lg-5" href="../controllers/controller-home.php" type="button" >Annuler</a>
 
         </form>
 </div>

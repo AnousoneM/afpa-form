@@ -2,7 +2,7 @@
 
 <h2 class="text-center my-4">Mes trajets</h2>
 
-<div class="shadow mb-4 p-5 col-lg-6 col-11 mx-auto rounded bg-light">
+<div class="shadow mb-4 p-lg-5 p-1 col-lg-6 col-11 mx-auto rounded bg-light">
 
     <!-- Messages sur les trajets -->
     <?php if (isset($_SESSION['message']['add']) && $_SESSION['message']['add'] == 'success') { ?>
@@ -20,32 +20,43 @@
     <!-- Supprime le message de session pour un affichage unique  -->
     <?php unset($_SESSION['message']); ?>
 
-    <!-- Messages sur les trajets -->
 
-    <table class="table table-sm table-striped text-center border">
-        <thead>
-            <tr>
-                <th scope="col">Date</th>
-                <th scope="col">Distance</th>
-                <th scope="col">Transport</th>
-                <th scope="col"></th>
-            </tr>
-        </thead>
-        <tbody>
+    <?php
+    // si aucun trajet n'est enregistré, affiche un message
+    if (count(Trajet::getAllTrajets($_SESSION['user']['id_utilisateur'])) <= 0) { ?>
+    
+            <p class="text-center fs-4">Vous n'avez pas encore de trajet enregistré.</p>
 
-            <?php foreach (Trajet::getAllTrajets($_SESSION['user']['id_utilisateur']) as $ride) { ?>
+    <?php } else { ?>
 
-                <tr class="align-middle">
-                    <td><?= $ride['dateFr'] ?></td>
-                    <td><?= $ride['distance_trajet'] ?>m</td>
-                    <td><?= $ride['type_transport'] ?></td>
-                    <td><button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal-<?= $ride['id_trajet'] ?>"><i class="fa-solid fa-trash"></i></button></td>
+
+
+        <table class="table table-sm table-striped text-center border">
+            <thead>
+                <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Distance</th>
+                    <th scope="col">Transport</th>
+                    <th scope="col"></th>
                 </tr>
+            </thead>
+            <tbody>
 
-            <?php } ?>
+                <?php foreach (Trajet::getAllTrajets($_SESSION['user']['id_utilisateur']) as $ride) { ?>
 
-        </tbody>
-    </table>
+                    <tr class="align-middle">
+                        <td><?= $ride['dateFr'] ?></td>
+                        <td><?= $ride['distance_trajet'] ?>m</td>
+                        <td><?= $ride['type_transport'] ?></td>
+                        <td><button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal-<?= $ride['id_trajet'] ?>"><i class="fa-solid fa-trash"></i></button></td>
+                    </tr>
+
+                <?php } ?>
+
+            </tbody>
+        </table>
+
+    <?php } ?>
 
     <?php foreach (Trajet::getAllTrajets($_SESSION['user']['id_utilisateur']) as $ride) { ?>
         <!-- Modal de suppression-->
@@ -74,8 +85,8 @@
     <?php } ?>
 
     <div class="text-center">
-        <a class="btn btn-secondary" href="../controllers/controller-home.php">Accueil</a>
-        <a class="btn btn-success" href="../controllers/controller-addRide.php">Ajouter un trajet</a>
+        <a class="btn btn-secondary my-1 col-lg-3 col-12" href="../controllers/controller-home.php">Accueil</a>
+        <a class="btn btn-success my-1 col-lg-3 col-12" href="../controllers/controller-addRide.php">Ajouter un trajet</a>
     </div>
 
 </div>
