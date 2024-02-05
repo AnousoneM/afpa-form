@@ -135,6 +135,10 @@ class Trajet
 
             // on execute la requête
             $query->execute();
+
+            // on ferme la connexion
+            $db = null;
+            
         } catch (PDOException $e) {
             echo 'Erreur : ' . $e->getMessage();
             die();

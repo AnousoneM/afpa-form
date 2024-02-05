@@ -1,6 +1,6 @@
 <?php include '../views/templates/head.php'; ?>
 
-<div class="shadow my-5 p-lg-5 p-1 col-lg-4 col-11 mx-auto rounded bg-light">
+<div class="shadow my-5 p-lg-2 p-1 col-lg-4 col-11 mx-auto rounded bg-light">
 
     <!-- Messages sur les trajets -->
     <?php if (isset($_SESSION['message']['update']) && $_SESSION['message']['update'] == 'success') { ?>

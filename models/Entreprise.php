@@ -26,8 +26,12 @@ class Entreprise
             // on récupère le résultat de la requête dans une variable $result
             $result = $query->fetchAll();
 
+            // on ferme la connexion
+            $db = null;
+
             // on retourne le résultat
             return $result;
+            
         } catch (PDOException $e) {
             echo 'Erreur : ' . $e->getMessage();
             die();

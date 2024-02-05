@@ -42,6 +42,10 @@ class Utilisateur
 
             // on execute la requête
             $query->execute();
+
+            // on ferme la connexion
+            $db = null;
+
         } catch (PDOException $e) {
             echo 'Erreur : ' . $e->getMessage();
             die();
@@ -89,6 +93,10 @@ class Utilisateur
 
             // on execute la requête
             $query->execute();
+
+            // on ferme la connexion
+            $db = null;
+
         } catch (PDOException $e) {
             echo 'Erreur : ' . $e->getMessage();
             die();
@@ -124,8 +132,12 @@ class Utilisateur
             // on récupère le résultat de la requête dans une variable
             $result = $query->fetch(PDO::FETCH_ASSOC);
 
+            // on ferme la connexion
+            $db = null;
+
             // on vérifie si le résultat est vide car si c'est le cas, cela veut dire que le mail n'existe pas
             if (empty($result)) {
+
                 return false;
             } else {
                 return true;
@@ -164,6 +176,9 @@ class Utilisateur
 
             // on récupère le résultat de la requête dans une variable
             $result = $query->fetch(PDO::FETCH_ASSOC);
+
+            // on ferme la connexion
+            $db = null;
 
             // on vérifie si le résultat est vide car si c'est le cas, cela veut dire que le mail n'existe pas
             // on retourne le résultat
@@ -208,6 +223,9 @@ class Utilisateur
             // on récupère le résultat de la requête dans une variable
             $result = $query->fetch(PDO::FETCH_ASSOC);
 
+            // on ferme la connexion
+            $db = null;
+
             // on retourne le résultat
             return $result;
         } catch (PDOException $e) {
@@ -241,6 +259,10 @@ class Utilisateur
 
             // on execute la requête
             $query->execute();
+
+            // on ferme la connexion
+            $db = null;
+            
         } catch (PDOException $e) {
             echo 'Erreur : ' . $e->getMessage();
             die();

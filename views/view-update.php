@@ -68,8 +68,8 @@
                 <textarea class="form-control <?= isset($_POST['description']) && !isset($errors['description']) ? 'is-valid' : '' ?>" placeholder="A propos" name="description" id="description"><?= $_POST['description'] ?? $_SESSION['user']['description_participant'] ?></textarea>
             </div>
 
-            <button class="d-block col-6 mx-auto mt-5 mb-1 btn btn-dark">Enregistrer modifications</button>
-            <p class="text-center"><a class="d-block col-6 mx-auto mt-3 mb-1 btn btn-secondary" href="../controllers/controller-profil.php">Annuler</a></p>
+            <button class="d-block col-lg-8 col-12 mx-auto mt-5 mb-1 btn btn-dark">Enregistrer modifications</button>
+            <p class="text-center"><a class="d-block col-lg-8 col-12 mx-auto m-1 btn btn-secondary" href="../controllers/controller-profil.php">Annuler</a></p>
 
         </form>
   
