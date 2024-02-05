@@ -25,7 +25,7 @@ class Utilisateur
             $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
 
             // stockage de ma requete dans une variable
-            $sql = "INSERT INTO `utilisateur` (`nom_participant`,`prenom_participant`, `pseudo_participant`, `naissance_participant`, `mail_participant`, `mdp_participant`, `id_entreprise`, `valide_participant` ) VALUES (:lastname, :firstname, :pseudo, :birthdate, :email, :mdp_participant, :id_enterprise, :valide_participant);";
+            $sql = "INSERT INTO `utilisateur` (`nom_participant`,`prenom_participant`, `pseudo_participant`, `naissance_participant`, `mail_participant`, `mdp_participant`, `photo_participant`, `id_entreprise`, `valide_participant` ) VALUES (:lastname, :firstname, :pseudo, :birthdate, :email, :mdp_participant, :photo_participant, :id_enterprise, :valide_participant);";
 
             // je prepare ma requête pour éviter les injections SQL
             $query = $db->prepare($sql);
@@ -38,6 +38,7 @@ class Utilisateur
             $query->bindValue(':email', $email, PDO::PARAM_STR);
             $query->bindValue(':mdp_participant', password_hash($password, PASSWORD_DEFAULT), PDO::PARAM_STR);
             $query->bindValue(':id_enterprise', $idEnterprise, PDO::PARAM_STR);
+            $query->bindValue(':photo_participant', 'default.jpg', PDO::PARAM_STR);
             $query->bindValue(':valide_participant', $validParticipant, PDO::PARAM_INT);
 
             // on execute la requête

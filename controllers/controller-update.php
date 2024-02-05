@@ -117,8 +117,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    var_dump($errors);
-
     // Si il n'y a pas d'erreurs dans notre formulaire(via tableau d'erreurs), nous lançons la méthode create de la classe Utilisateur
     if (empty($errors)) {
 
