@@ -26,7 +26,7 @@ class Entreprise
             // on récupère le résultat de la requête dans une variable $result
             $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
-            // on ferme la connexion à la base de données
+            // on ferme la connexion à la base de données à l'aide de la ligne
             $db = null;
 
             return $result;
