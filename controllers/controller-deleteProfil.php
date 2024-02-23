@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete'])) {
 
     // J'efface tous les trajets de l'utilisateur
     // J'execute la méthode deleteAll de la classe Trajet
-    Trajet::deleteAll($id_utilisateur);
+    // Trajet::deleteAll($id_utilisateur);
 
     // J'efface l'utilisateur
     // J'execute la méthode delete de la classe Utilisateur

@@ -1,0 +1,4 @@
+Options -Indexes
+
+ErrorDocument 403 /errors/notfound.html
+ErrorDocument 404 /errors/notfound.html

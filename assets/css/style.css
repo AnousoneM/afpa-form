@@ -20,3 +20,10 @@ body {
     font-size: 0.8rem;
     font-style: italic;
 }
+
+.img404 {
+    width: auto;
+    height: 50vh;
+    display: block;
+    margin: 0 auto;
+}
