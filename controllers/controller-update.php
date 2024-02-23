@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $profiles_sizeMax = 2000000;
 
         // extension autorisées
-        $profiles_allowedExtensions = ['jpg', 'jpeg', 'png'];
+        $profiles_allowedExtensions = ['jpg', 'jpeg', 'png', 'webp'];
 
 
         // Contrôle du fichier à upload //
