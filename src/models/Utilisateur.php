@@ -1,7 +1,6 @@
 <?php
 
-namespace app\models;
-
+namespace App\Models;
 use \PDO;
 
 class Utilisateur

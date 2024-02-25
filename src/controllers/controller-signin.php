@@ -9,6 +9,8 @@ if (isset($_SESSION['user'])) {
     exit();
 }
 
+// Autoload
+require_once '../../vendor/autoload.php';
 // Config
 require_once '../../config/config.php';
 

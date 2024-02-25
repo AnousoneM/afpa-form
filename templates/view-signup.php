@@ -1,5 +1,12 @@
+
+<?php 
+require_once '../../vendor/autoload.php';
+use app\models\Entreprise; 
+?>
+
 <!-- Intégration du head -->
 <?php include 'components/head.php'; ?>
+
 
 <h2 class="text-center my-4">Inscription</h2>
 
@@ -90,4 +97,4 @@
 </div>
 
 <!-- Intégration du footer -->
-<?php include '../views/templates/footer.php'; ?>
+<?php include 'components/footer.php'; ?>

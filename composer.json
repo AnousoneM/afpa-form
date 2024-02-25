@@ -3,8 +3,7 @@
     "description": "Petit projet EcoRide sur le mise en place d'un CRUD",
     "autoload": {
         "psr-4": {
-            "app\\models\\": "src/models",
-            "app\\controllers\\": "src/controllers/"
+            "app\\models\\": "src/models/"
         }
     },
     "authors": [

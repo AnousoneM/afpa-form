@@ -16,4 +16,4 @@
 </head>
 
 <body class="d-flex flex-column vh-100">
-    <a class="text-decoration-none text-dark" href="../index.php"><h1 class="text-center mt-4">EC<i class="fa-solid fa-leaf"></i>' RIDE</h1></a>
+    <a class="text-decoration-none text-dark" href="../../index.php"><h1 class="text-center mt-4">EC<i class="fa-solid fa-leaf"></i>' RIDE</h1></a>

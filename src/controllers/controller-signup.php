@@ -1,10 +1,10 @@
 <?php
 // Config
-require_once '../config.php';
-
+require_once '../../config/config.php';
 // Models
-require_once '../models/Utilisateur.php';
-require_once '../models/Entreprise.php';
+
+require_once '../../vendor/autoload.php';
+use app\models\Utilisateur;
 
 // regex
 $regexName = '/^[a-zA-Z]+$/';
@@ -103,4 +103,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <!-- Intégration de la vue signup dans le contrôleur signup -->
-<?php include '../views/view-signup.php'; ?>
+<?php include '../../templates/view-signup.php'; ?>
