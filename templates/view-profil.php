@@ -84,7 +84,7 @@
     </div>
 </div>
 
-<script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 <script>
     const myModal = document.getElementById('myModal')
     const myInput = document.getElementById('myInput')
@@ -95,4 +95,4 @@
 </script>
 
 <!-- Intégration du footer -->
-<?php include '../views/templates/footer.php'; ?>
+<?php include 'components/footer.php'; ?>
