@@ -1,4 +1,4 @@
 <?php
 
-header('Location: controllers/controller-signin.php');
+header('Location: src/controllers/controller-signin.php');
 exit;

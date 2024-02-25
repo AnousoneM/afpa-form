@@ -9,12 +9,11 @@ if (isset($_SESSION['user'])) {
     exit();
 }
 
-
 // Config
-require_once '../config.php';
+require_once '../../config/config.php';
 
 // Models
-require_once '../models/Utilisateur.php';
+use app\models\Utilisateur;
 
 // Nous déclenchons nos vérifications uniquement lorsqu'un submit de type POST est détecté
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -58,4 +57,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <!-- Integration de la vue -->
-<?php include '../views/view-signin.php'; ?>
+<?php include '../../templates/view-signin.php'; ?>

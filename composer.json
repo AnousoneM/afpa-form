@@ -3,13 +3,13 @@
     "description": "Petit projet EcoRide sur le mise en place d'un CRUD",
     "autoload": {
         "psr-4": {
-            "Amounivongs\\AfpaForm\\": "src/"
+            "app\\models\\": "src/models",
+            "app\\controllers\\": "src/controllers/"
         }
     },
     "authors": [
         {
-            "name": "AnousoneM",
-            "email": "anousone.mounivongs@gmail.com"
+            "name": "AnousoneM"
         }
     ],
     "require": {}

@@ -1,4 +1,4 @@
-<?php include '../views/templates/head.php'; ?>
+<?php include 'components/head.php'; ?>
 
 <div class="shadow my-5 p-lg-2 p-1 col-lg-4 col-11 mx-auto rounded bg-light">
 

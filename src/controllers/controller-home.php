@@ -9,7 +9,7 @@ if (!isset($_SESSION['user'])) {
 }
 
 // Config
-require_once '../config.php';
+require_once '../../config/config.php';
 
 // mise en place de la variable date en fr : jour mois année -> 01 Janvier 2024
 $formatFr = new IntlDateFormatter('fr_FR', IntlDateFormatter::LONG, IntlDateFormatter::NONE);
@@ -18,4 +18,4 @@ $date = $formatFr->format(time());
 ?>
 
 <!-- Integration de la vue -->
-<?php include '../views/view-home.php'; ?>
+<?php include '../../templates/view-home.php'; ?>

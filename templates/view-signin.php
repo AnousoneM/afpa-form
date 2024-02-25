@@ -1,4 +1,4 @@
-<?php include '../views/templates/head.php'; ?>
+<?php include 'components/head.php'; ?>
 
 <h2 class="my-4 text-center">Connexion</h2>
 
@@ -29,4 +29,4 @@
 </form>
 
 <!-- Intégration du footer -->
-<?php include '../views/templates/footer.php'; ?>
+<?php include 'components/footer.php'; ?>

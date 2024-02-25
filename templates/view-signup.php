@@ -1,5 +1,5 @@
 <!-- Intégration du head -->
-<?php include '../views/templates/head.php'; ?>
+<?php include 'components/head.php'; ?>
 
 <h2 class="text-center my-4">Inscription</h2>
 
