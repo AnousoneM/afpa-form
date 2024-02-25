@@ -1,5 +1,8 @@
 <?php
 
+namespace App\Models;
+
+use PDO;
 class Entreprise
 {
     /**
@@ -30,7 +33,7 @@ class Entreprise
             $db = null;
 
             return $result;
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             // permet de récupérer le message d'erreur pour un debuggage plus facile
             echo 'Erreur : ' . $e->getMessage();
             die();

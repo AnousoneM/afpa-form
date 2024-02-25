@@ -1,5 +1,8 @@
 <?php
 
+namespace App\Models;
+
+use \PDO;
 class Trajet
 {
     /**
@@ -36,7 +39,7 @@ class Trajet
 
             // on execute la requête
             $query->execute();
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             echo 'Erreur : ' . $e->getMessage();
             die();
         }
@@ -75,7 +78,7 @@ class Trajet
 
             // on retourne le résultat
             return $result;
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             echo 'Erreur : ' . $e->getMessage();
             die();
         }
@@ -105,7 +108,7 @@ class Trajet
 
             // on execute la requête
             $query->execute();
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             echo 'Erreur : ' . $e->getMessage();
             die();
         }
@@ -139,7 +142,7 @@ class Trajet
             // on ferme la connexion
             $db = null;
             
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             echo 'Erreur : ' . $e->getMessage();
             die();
         }

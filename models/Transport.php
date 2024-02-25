@@ -1,5 +1,9 @@
 <?php
 
+namespace App\Models;
+
+use \PDO;
+
 class Transport
 {
     /**
@@ -31,7 +35,7 @@ class Transport
 
             // on retourne le résultat
             return $result;
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             echo 'Erreur : ' . $e->getMessage();
             die();
         }

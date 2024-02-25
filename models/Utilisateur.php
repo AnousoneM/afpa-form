@@ -1,5 +1,9 @@
 <?php
 
+namespace App\Models;
+
+use \PDO;
+
 class Utilisateur
 {
     /**
@@ -47,7 +51,7 @@ class Utilisateur
             // on ferme la connexion
             $db = null;
 
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             echo 'Erreur : ' . $e->getMessage();
             die();
         }
@@ -98,7 +102,7 @@ class Utilisateur
             // on ferme la connexion
             $db = null;
 
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             echo 'Erreur : ' . $e->getMessage();
             die();
         }
@@ -143,7 +147,7 @@ class Utilisateur
             } else {
                 return true;
             }
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             echo 'Erreur : ' . $e->getMessage();
             die();
         }
@@ -188,7 +192,7 @@ class Utilisateur
             } else {
                 return true;
             }
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             echo 'Erreur : ' . $e->getMessage();
             die();
         }
@@ -229,7 +233,7 @@ class Utilisateur
 
             // on retourne le résultat
             return $result;
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             echo 'Erreur : ' . $e->getMessage();
             die();
         }
@@ -264,7 +268,7 @@ class Utilisateur
             // on ferme la connexion
             $db = null;
             
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             echo 'Erreur : ' . $e->getMessage();
             die();
         }
