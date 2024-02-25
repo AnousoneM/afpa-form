@@ -1,0 +1,16 @@
+{
+    "name": "amounivongs/afpa-form",
+    "description": "Petit projet EcoRide sur le mise en place d'un CRUD",
+    "autoload": {
+        "psr-4": {
+            "Amounivongs\\AfpaForm\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "AnousoneM",
+            "email": "anousone.mounivongs@gmail.com"
+        }
+    ],
+    "require": {}
+}
