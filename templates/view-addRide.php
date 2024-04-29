@@ -1,6 +1,7 @@
 <!-- Intégration du head -->
 <?php include 'components/head.php'; ?>
 
+
 <h2 class="text-center my-4">Ajouter un trajet</h2>
 
 <div class="shadow mx-auto col-lg-4 col-11 mb-4 p-lg-5 p-3 rounded bg-light">
