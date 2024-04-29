@@ -11,6 +11,9 @@ if (!isset($_SESSION['user'])) {
 // Config
 require_once '../../config/config.php';
 
+// Autoload
+require_once '../../vendor/autoload.php';
+
 // Import des classes
 use app\models\Trajet;
 

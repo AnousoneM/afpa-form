@@ -13,7 +13,7 @@
     <?php unset($_SESSION['message']); ?>
 
     <h1 class="mb-2 text-center"><?= $_SESSION['user']['pseudo_participant'] ?></h1>
-    <img src="../assets/img/profiles/<?= $_SESSION['user']['photo_participant'] == NULL ? 'default.jpg' : $_SESSION['user']['photo_participant'] ?>" class="d-block rounded-circle col-3 border border-dark mx-auto" alt="Photo de Profil">
+    <img src="../../public/img/profiles/<?= $_SESSION['user']['photo_participant'] == NULL ? 'default.jpg' : $_SESSION['user']['photo_participant'] ?>" class="d-block rounded-circle col-3 border border-dark mx-auto" alt="Photo de Profil">
 
     <div class="mt-2 p-lg-3 p-1 justify-content-center">
 

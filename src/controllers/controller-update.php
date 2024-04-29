@@ -11,9 +11,11 @@ if (!isset($_SESSION['user'])) {
 // Config
 require_once '../../config/config.php';
 
-// Models
-require_once '../models/Utilisateur.php';
-require_once '../models/Entreprise.php';
+// Autoload
+require_once '../../vendor/autoload.php';
+
+// Import des classes
+use app\models\Utilisateur;
 
 // regex
 $regexName = '/^[a-zA-Z]+$/';
@@ -74,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($_FILES['photo']['error'] === 0) {
 
         // Constantes pour l'enregistrement de la photo de profile
-        $profiles_directory = "../assets/img/profiles/";
+        $profiles_directory = "../../public/img/profiles/";
 
         // Taille max en octets (2Mo)  
         $profiles_sizeMax = 2000000;
@@ -82,8 +84,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // extension autorisées
         $profiles_allowedExtensions = ['jpg', 'jpeg', 'png', 'webp'];
 
-
+        //////////////////////////////////
         // Contrôle du fichier à upload //
+        //////////////////////////////////
 
         // On créé une variable $fileName qui contiendra le nom du fichier
         $fileName = basename($_FILES['photo']["name"]);

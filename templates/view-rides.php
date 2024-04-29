@@ -1,5 +1,8 @@
 <?php include 'components/head.php'; ?>
 
+<!-- Import de la classe -->
+<?php use app\models\Trajet; ?>
+
 <h2 class="text-center my-4">Mes trajets</h2>
 
 <div class="shadow mb-4 p-lg-5 p-2 col-lg-6 col-11 mx-auto rounded bg-light">
@@ -102,4 +105,4 @@
 </script>
 
 <!-- Intégration du footer -->
-<?php include '../views/templates/footer.php'; ?>
+<?php include 'components/footer.php'; ?>

@@ -2,7 +2,7 @@
 // Config
 require_once '../../config/config.php';
 
-// Models
+// Autoload
 require_once '../../vendor/autoload.php';
 
 // Import des classes

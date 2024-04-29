@@ -1,6 +1,9 @@
 <!-- Intégration du head -->
 <?php include 'components/head.php'; ?>
 
+<!-- Import de la classe -->
+<?php use app\models\Entreprise; ?>
+
 <h2 class="text-center my-4">Update</h2>
 
 <div class="shadow mx-auto col-lg-4 col-11 mb-4 p-lg-5 p-3 rounded bg-light">
@@ -76,4 +79,4 @@
 </div>
 
 <!-- Intégration du footer -->
-<?php include '../views/templates/footer.php'; ?>
+<?php include 'components/footer.php'; ?>

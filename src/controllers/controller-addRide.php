@@ -11,9 +11,11 @@ if (!isset($_SESSION['user'])) {
 // Config
 require_once '../../config/config.php';
 
+// Autoload
+require_once '../../vendor/autoload.php';
+
 // Import des classes
 use app\models\Trajet;
-use app\models\Transport;
 
 // Je déclenche mes tests uniquement lors d'un POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
