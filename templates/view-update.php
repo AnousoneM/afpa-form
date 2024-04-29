@@ -18,7 +18,7 @@
 
         </div>
 
-        <img src="../assets/img/profiles/<?= $_SESSION['user']['photo_participant'] == NULL ? 'default.jpg' : $_SESSION['user']['photo_participant'] ?>" class="d-block rounded-circle col-3 border border-dark mx-auto" alt="Photo de Profil">
+        <img src="../../public/img/profiles/<?= $_SESSION['user']['photo_participant'] == NULL ? 'default.jpg' : $_SESSION['user']['photo_participant'] ?>" class="d-block rounded-circle col-3 border border-dark mx-auto" alt="Photo de Profil">
 
             <div class="my-3">
                 <label class="me-1 fw-bold" for="photo">Photo de profil<i class="bi bi-pencil ms-2"></i></label>
