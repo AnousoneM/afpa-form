@@ -8,7 +8,7 @@ if (!isset($_SESSION['user'])) {
 }
 
 // Config
-require_once '../config.php';
+require_once '../../config/config.php';
 
 // Models
 require_once '../models/Utilisateur.php';
@@ -32,4 +32,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete'])) {
     session_destroy();
 }
 
-include '../views/view-deleteProfil.php';
+include '../../tempplates/view-deleteProfil.php';

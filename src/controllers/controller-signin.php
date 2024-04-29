@@ -14,7 +14,7 @@ require_once '../../vendor/autoload.php';
 // Config
 require_once '../../config/config.php';
 
-// Models
+// Import des classes
 use app\models\Utilisateur;
 
 // Nous déclenchons nos vérifications uniquement lorsqu'un submit de type POST est détecté

@@ -1,6 +1,8 @@
 <?php
 
+// nous créons un namespace pour notre classe
 namespace App\Models;
+// nous importons la classe PDO pour pouvoir nous connecter à notre base de données
 use \PDO;
 
 class Trajet

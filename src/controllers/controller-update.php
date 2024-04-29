@@ -9,7 +9,7 @@ if (!isset($_SESSION['user'])) {
 }
 
 // Config
-require_once '../config.php';
+require_once '../../config/config.php';
 
 // Models
 require_once '../models/Utilisateur.php';
@@ -151,4 +151,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <!-- Intégration de la vue signup dans le contrôleur signup -->
-<?php include '../views/view-update.php'; ?>
+<?php include '../../templates/view-update.php'; ?>

@@ -9,11 +9,11 @@ if (!isset($_SESSION['user'])) {
 }
 
 // Config
-require_once '../config.php';
+require_once '../../config/config.php';
 
-// Models
-require_once '../models/Trajet.php';
-require_once '../models/Transport.php';
+// Import des classes
+use app\models\Trajet;
+use app\models\Transport;
 
 // Je déclenche mes tests uniquement lors d'un POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -63,4 +63,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <!-- Intégration de la vue signup dans le contrôleur signup -->
-<?php include '../views/view-addRide.php'; ?>
+<?php include '../../templates/view-addRide.php'; ?>

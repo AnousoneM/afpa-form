@@ -1,9 +1,11 @@
 <?php
 // Config
 require_once '../../config/config.php';
-// Models
 
+// Models
 require_once '../../vendor/autoload.php';
+
+// Import des classes
 use app\models\Utilisateur;
 
 // regex
